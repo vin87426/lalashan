@@ -59,16 +59,16 @@
     <!-- Room Details Modal -->
     <div id="room-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform transition-all scale-95" id="modal-content">
-            <div class="sticky top-0 bg-white z-10 p-6 border-b flex justify-between items-center">
+            <div class="sticky top-0 bg-white z-10 p-4 md:p-6 border-b flex justify-between items-center">
                 <div>
-                    <h3 class="text-2xl font-bold text-gray-800" id="modal-title">民宿名稱</h3>
-                    <p class="text-sm text-gray-500" id="modal-subtitle">房型詳細評比</p>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-800" id="modal-title">民宿名稱</h3>
+                    <p class="text-xs md:text-sm text-gray-500" id="modal-subtitle">房型詳細評比</p>
                 </div>
                 <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 transition">
-                    <i class="fas fa-times text-2xl"></i>
+                    <i class="fas fa-times text-xl md:text-2xl"></i>
                 </button>
             </div>
-            <div class="p-6" id="modal-body">
+            <div class="p-4 md:p-6" id="modal-body">
                 <!-- Room content goes here -->
             </div>
         </div>
@@ -77,13 +77,13 @@
     <!-- Hero Section -->
     <div class="relative h-96 sakura-bg flex items-center justify-center text-center">
         <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 text-white p-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-pink-200">2026 拉拉山賞櫻住宿攻略</h1>
-            <p class="text-xl md:text-2xl mb-2">入住日期：2026/02/26 - 02/28</p>
-            <p class="text-lg text-pink-100">精選 7 間熱門民宿・全方位深度評比</p>
-            <div class="mt-8 flex gap-4 justify-center">
-                <a href="#comparison-table" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-bold transition">查看比較表</a>
-                <a href="#cards-section" class="bg-white hover:bg-gray-100 text-pink-600 px-6 py-3 rounded-full font-bold transition">查看民宿詳情</a>
+        <div class="relative z-10 text-white p-4 w-full">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 text-pink-200">2026 拉拉山賞櫻住宿攻略</h1>
+            <p class="text-lg md:text-2xl mb-2">入住日期：2026/02/26 - 02/28</p>
+            <p class="text-base md:text-lg text-pink-100">精選 7 間熱門民宿・全方位深度評比</p>
+            <div class="mt-8 flex flex-col md:flex-row gap-3 md:gap-4 justify-center px-4">
+                <a href="#comparison-table" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-bold transition w-full md:w-auto shadow-lg">查看比較表</a>
+                <a href="#cards-section" class="bg-white hover:bg-gray-100 text-pink-600 px-6 py-3 rounded-full font-bold transition w-full md:w-auto shadow-lg">查看民宿詳情</a>
             </div>
         </div>
     </div>
@@ -109,25 +109,25 @@
         </div>
 
         <!-- Interactive Table Section -->
-        <div id="comparison-table" class="bg-white rounded-3xl shadow-xl overflow-hidden mb-16">
-            <div class="p-6 bg-gray-50 flex flex-wrap justify-between items-center border-b">
-                <h2 class="text-2xl font-bold text-gray-800"><i class="fas fa-table mr-2 text-pink-500"></i>詳細規格比較表</h2>
-                <div class="flex gap-2 text-sm">
-                    <button onclick="filterTable('all')" class="px-4 py-2 rounded-lg bg-pink-100 text-pink-700 font-medium hover:bg-pink-200 focus:ring-2 ring-pink-500">顯示全部</button>
-                    <button onclick="filterTable('heating')" class="px-4 py-2 rounded-lg bg-blue-100 text-blue-700 font-medium hover:bg-blue-200">強調暖氣</button>
-                    <button onclick="filterTable('food')" class="px-4 py-2 rounded-lg bg-green-100 text-green-700 font-medium hover:bg-green-200">含晚餐/廚房</button>
+        <div id="comparison-table" class="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden mb-12 md:mb-16">
+            <div class="p-4 md:p-6 bg-gray-50 flex flex-col md:flex-row gap-4 justify-between items-center border-b">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 flex items-center"><i class="fas fa-table mr-2 text-pink-500"></i><span class="whitespace-nowrap">詳細規格比較表</span></h2>
+                <div class="flex flex-wrap gap-2 text-sm justify-center w-full md:w-auto">
+                    <button onclick="filterTable('all')" class="flex-1 md:flex-none px-3 md:px-4 py-2 rounded-lg bg-pink-100 text-pink-700 font-medium hover:bg-pink-200 focus:ring-2 ring-pink-500 whitespace-nowrap">顯示全部</button>
+                    <button onclick="filterTable('heating')" class="flex-1 md:flex-none px-3 md:px-4 py-2 rounded-lg bg-blue-100 text-blue-700 font-medium hover:bg-blue-200 whitespace-nowrap">強調暖氣</button>
+                    <button onclick="filterTable('food')" class="flex-1 md:flex-none px-3 md:px-4 py-2 rounded-lg bg-green-100 text-green-700 font-medium hover:bg-green-200 whitespace-nowrap">含晚餐</button>
                 </div>
             </div>
             <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
+                <table class="w-full text-left border-collapse min-w-[600px] md:min-w-full">
                     <thead>
                         <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
-                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-gray-200" onclick="sortTable(0)">名稱 <i class="fas fa-sort"></i></th>
-                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-gray-200" onclick="sortTable(1)">預估價位 <i class="fas fa-sort"></i></th>
-                            <th class="py-4 px-6 font-bold">暖氣設備 <span class="text-xs bg-red-100 text-red-600 px-1 rounded">重要</span></th>
-                            <th class="py-4 px-6 font-bold">餐飲特色</th>
-                            <th class="py-4 px-6 font-bold">景觀/特色</th>
-                            <th class="py-4 px-6 font-bold center">評分</th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold cursor-pointer hover:bg-gray-200 whitespace-nowrap" onclick="sortTable(0)">名稱 <i class="fas fa-sort"></i></th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold cursor-pointer hover:bg-gray-200 whitespace-nowrap" onclick="sortTable(1)">預估價位 <i class="fas fa-sort"></i></th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold whitespace-nowrap">暖氣設備 <span class="hidden md:inline text-xs bg-red-100 text-red-600 px-1 rounded">重要</span></th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold whitespace-nowrap">餐飲特色</th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold whitespace-nowrap hidden md:table-cell">景觀/特色</th>
+                            <th class="py-3 px-3 md:py-4 md:px-6 font-bold center whitespace-nowrap">評分</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" class="text-gray-700 text-sm">
@@ -144,21 +144,21 @@
                 <p class="text-gray-500 mt-2">精選 7 間優質民宿，點擊卡片查看詳細房型攻略與評價 (2026 最新版)</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cards-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="cards-container">
                 <!-- Cards will be populated by JS -->
             </div>
         </div>
 
         <!-- Map Section -->
-        <div id="map-section" class="mb-24">
-             <div class="flex justify-between items-center mb-6">
+        <div id="map-section" class="mb-12 md:mb-24">
+             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-6">
                  <div>
-                    <h2 class="text-3xl font-bold text-gray-800"><i class="fas fa-map-marked-alt text-pink-500 mr-2"></i>住宿位置分佈圖</h2>
-                    <p class="text-gray-500">快速查看各民宿位置，點擊標記可查看導航資訊</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800"><i class="fas fa-map-marked-alt text-pink-500 mr-2"></i>住宿位置分佈圖</h2>
+                    <p class="text-gray-500 text-sm md:text-base">快速查看各民宿位置，點擊標記可查看導航資訊</p>
                  </div>
              </div>
-             <div class="bg-white p-2 rounded-3xl shadow-xl">
-                 <div id="map" class="w-full h-[500px] rounded-2xl z-0"></div>
+             <div class="bg-white p-2 rounded-2xl md:rounded-3xl shadow-xl">
+                 <div id="map" class="w-full h-[400px] md:h-[500px] rounded-xl md:rounded-2xl z-0"></div>
              </div>
         </div>
     </div>
@@ -502,22 +502,22 @@
         function renderTable(data) {
             tableBody.innerHTML = data.map(hotel => `
                 <tr class="border-b border-gray-100 hover:bg-gray-50 transition">
-                    <td class="py-3 px-6 font-medium text-gray-800">
+                    <td class="py-3 px-3 md:px-6 font-medium text-gray-800">
                         <div class="flex items-center">
-                            <span class="mr-2 w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-bold">${hotel.id}</span>
-                            ${hotel.name}
+                            <span class="mr-1 md:mr-2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-bold flex-shrink-0">${hotel.id}</span>
+                            <span class="text-xs md:text-base break-words">${hotel.name}</span>
                         </div>
-                        <span class="text-xs text-gray-400 ml-8">${hotel.legal}</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 ml-6 md:ml-8 block">${hotel.legal}</span>
                     </td>
-                    <td class="py-3 px-6 text-gray-600">${hotel.priceDisplay}</td>
-                    <td class="py-3 px-6">
-                        <span class="px-2 py-1 rounded text-xs font-semibold ${getHeatingColor(hotel.heatingScore)}">
+                    <td class="py-3 px-3 md:px-6 text-gray-600 text-xs md:text-sm">${hotel.priceDisplay}</td>
+                    <td class="py-3 px-3 md:px-6">
+                        <span class="px-2 py-1 rounded text-[10px] md:text-xs font-semibold ${getHeatingColor(hotel.heatingScore)} inline-block">
                             ${hotel.heating}
                         </span>
                     </td>
-                    <td class="py-3 px-6 text-gray-600">${hotel.food}</td>
-                    <td class="py-3 px-6 text-gray-600">${hotel.view}</td>
-                    <td class="py-3 px-6 text-center text-yellow-500 font-bold">★ ${hotel.rating}</td>
+                    <td class="py-3 px-3 md:px-6 text-gray-600 text-xs md:text-sm">${hotel.food}</td>
+                    <td class="py-3 px-3 md:px-6 text-gray-600 text-xs md:text-sm hidden md:table-cell">${hotel.view}</td>
+                    <td class="py-3 px-3 md:px-6 text-center text-yellow-500 font-bold text-xs md:text-sm">★ ${hotel.rating}</td>
                 </tr>
             `).join('');
         }
@@ -629,18 +629,18 @@
                                              </span>
                                         </div>
                                     </div>
-                                    <div class="flex justify-between items-start mb-2">
+                                    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
                                         <h5 class="font-bold text-lg text-gray-800 flex items-center">
                                             ${room.name}
                                             <a href="${room.link}" target="_blank" class="ml-2 text-gray-400 hover:text-blue-500 text-sm"><i class="fas fa-external-link-alt"></i></a>
                                         </h5>
-                                        <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-bold">${room.prices}</span>
+                                        <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs md:text-sm font-bold self-start md:self-auto break-all md:break-normal">${room.prices}</span>
                                     </div>
                                     <div class="flex flex-wrap gap-2 mb-3">
                                         ${room.features.map(f => `<span class="text-xs px-2 py-1 bg-blue-50 text-blue-600 rounded border border-blue-100">${f}</span>`).join('')}
                                     </div>
                                     <div class="flex items-start text-sm text-gray-600 bg-gray-50 p-2 rounded">
-                                        <i class="fas fa-info-circle mt-1 mr-2 text-orange-400"></i>
+                                        <i class="fas fa-info-circle mt-1 mr-2 text-orange-400 flex-shrink-0"></i>
                                         <span>${room.note}</span>
                                     </div>
                                 </div>
@@ -649,9 +649,9 @@
                          <p class="text-xs text-gray-400 mt-4 text-center">* 價格為櫻花季旺季預估，實際請以訂房時報價為準</p>
                     </div>
 
-                    <div class="flex justify-end gap-3 pt-4 border-t">
-                        <button onclick="closeModal()" class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-bold">關閉</button>
-                        <a href="${hotel.mapUrl}" target="_blank" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-bold shadow-lg">
+                    <div class="flex flex-col md:flex-row justify-end gap-3 pt-4 border-t">
+                        <button onclick="closeModal()" class="w-full md:w-auto px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-bold order-2 md:order-1">關閉</button>
+                        <a href="${hotel.mapUrl}" target="_blank" class="w-full md:w-auto px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-bold shadow-lg text-center order-1 md:order-2">
                             <i class="fas fa-location-arrow mr-2"></i>導航
                         </a>
                     </div>
