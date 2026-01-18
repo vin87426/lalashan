@@ -477,6 +477,24 @@
                     </a>
                 </div>
             `);
+
+            // Add Tea Factory Marker
+            const teaMarker = L.marker([24.675, 121.380], {icon: greenIcon}).addTo(map);
+            teaMarker.bindTooltip("拉拉山製茶廠 (三光)", {
+                permanent: true,
+                direction: 'top',
+                className: 'map-label-tea',
+                offset: [0, -40]
+            });
+            teaMarker.bindPopup(`
+                <div class="font-sans">
+                    <h3 class="font-bold text-base mb-1 text-green-600">拉拉山製茶廠 (三光)</h3>
+                    <p class="text-xs text-gray-500 mb-2">在地好茶・品茗休閒</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=拉拉山製茶廠" target="_blank" class="block w-full text-center bg-green-500 text-white text-xs py-1.5 rounded hover:bg-green-600 transition">
+                        <i class="fas fa-leaf mr-1"></i> 顯示位置
+                    </a>
+                </div>
+            `);
         }
 
 
